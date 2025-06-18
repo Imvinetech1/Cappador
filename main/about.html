@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Cappador Property Services Ltd.</title>
+    <meta name="description" content="Learn about Cappador Property Services Ltd. - revolutionizing real estate and security solutions in Abuja" />
+    <meta name="author" content="Cappador Property Services Ltd." />
+
+    <meta property="og:title" content="About Us - Cappador Property Services Ltd." />
+    <meta property="og:description" content="Discover our comprehensive property and security solutions in Abuja" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    
+    <!-- Add these in the head section -->
+    <link rel="stylesheet" href="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.css">
+    
+    <style>
+      /* Update brand colors */
+      :root {
+        --color-primary: #1a365d;
+        --color-secondary: #2c5282;
+        --color-accent: #ed8936;
+      }
+      
+      /* About Page Specific Styles */
+      .page-header {
+        background-image: linear-gradient(rgba(15, 30, 76, 0.85), rgba(15, 30, 76, 0.85)), 
+                          url('../images/cappador-mall-exterior.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 6rem 0;
+        color: var(--color-white);
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .about-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+      
+      .about-intro p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        color: var(--color-gray);
+        line-height: 1.8;
+      }
+      
+      .about-mission {
+        background-color: var(--color-offwhite);
+        padding: 5rem 0;
+      }
+      
+      .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+      }
+      
+      @media (min-width: 768px) {
+        .mission-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      
+      .mission-item {
+        background-color: var(--color-white);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+      
+      .mission-item:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-5px);
+      }
+      
+      .mission-icon {
+        width: 4rem;
+        height: 4rem;
+        background-color: var(--color-gold-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+      }
+      
+      .mission-icon i {
+        color: var(--color-gold);
+        font-size: 1.75rem;
+      }
+      
+      .mission-item h3 {
+        color: var(--color-navy);
+        margin-bottom: 1rem;
+        font-family: var(--font-playfair);
+      }
+      
+      .mission-item p {
+        color: var(--color-gray);
+        line-height: 1.6;
+      }
+      
+      .milestone-section {
+        padding: 5rem 0;
+      }
+      
+      .milestone-year {
+        display: inline-block;
+        padding: 0.5rem 1.25rem;
+        background-color: var(--color-navy);
+        color: var(--color-white);
+        font-weight: 600;
+        border-radius: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .milestone-content {
+        position: relative;
+        padding-left: 2rem;
+        padding-bottom: 3rem;
+        border-left: 2px solid var(--color-navy);
+      }
+      
+      .milestone-content:last-child {
+        padding-bottom: 0;
+        border-left: none;
+      }
+      
+      .milestone-dot {
+        width: 1rem;
+        height: 1rem;
+        background-color: var(--color-gold);
+        border: 3px solid var(--color-navy);
+        border-radius: 50%;
+        position: absolute;
+        left: -0.5rem;
+        top: 0;
+      }
+      
+      .milestone-title {
+        font-family: var(--font-playfair);
+        color: var(--color-navy);
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+      }
+      
+      .milestone-description {
+        color: var(--color-gray);
+        margin-bottom: 0;
+        line-height: 1.6;
+      }
+      
+      .team-section {
+        background-color: var(--color-offwhite);
+        padding: 5rem 0;
+      }
+      
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+      }
+      
+      @media (min-width: 768px) {
+        .team-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .team-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      
+      .team-card {
+        background-color: var(--color-white);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+      
+      .team-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-5px);
+      }
+      
+      .team-image {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      
+      .team-card:hover .team-image img {
+        transform: scale(1.05);
+      }
+      
+      .team-content {
+        padding: 1.5rem;
+        text-align: center;
+      }
+      
+      .team-name {
+        color: var(--color-navy);
+        font-family: var(--font-playfair);
+        margin-bottom: 0.25rem;
+        font-size: 1.25rem;
+      }
+      
+      .team-position {
+        color: var(--color-gold);
+        font-weight: 500;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .team-bio {
+        color: var(--color-gray);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      .team-social {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      .team-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background-color: var(--color-navy-light);
+        color: var(--color-navy);
+        transition: all 0.3s ease;
+      }
+      
+      .team-social a:hover {
+        background-color: var(--color-navy);
+        color: var(--color-white);
+      }
+      
+      .partner-section {
+        padding: 5rem 0;
+        text-align: center;
+      }
+      
+      .partner-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+      
+      .partner-logo {
+        max-width: 150px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+      
+      .partner-logo:hover {
+        opacity: 1;
+      }
+      
+      .partner-logo img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      /* Enhanced Gallery Styles */
+      .property-gallery {
+        padding: 5rem 0;
+        background-color: var(--color-offwhite);
+      }
+
+      /* Filter Buttons */
+      .gallery-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .filter-btn {
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--color-navy);
+        border-radius: 2rem;
+        font-weight: 500;
+        color: var(--color-navy);
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn:hover {
+        background-color: var(--color-navy-light);
+      }
+
+      .filter-btn.active {
+        background-color: var(--color-navy);
+        color: var(--color-white);
+      }
+
+      /* Masonry Grid */
+      .gallery-grid {
+        display: block;
+        margin-top: 3rem;
+      }
+
+      .gallery-item {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        break-inside: avoid;
+      }
+
+      @media (min-width: 768px) {
+        .gallery-item {
+          width: calc(50% - 1rem);
+        }
+      }
+
+      @media (min-width: 992px) {
+        .gallery-item {
+          width: calc(33.333% - 1rem);
+        }
+      }
+
+      .gallery-image-wrapper {
+        position: relative;
+        padding-top: 75%; /* 4:3 Aspect Ratio */
+        overflow: hidden;
+        border-radius: 0.5rem;
+        background-color: var(--color-navy-light);
+      }
+
+      .gallery-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .gallery-item:hover .gallery-image {
+        transform: scale(1.08);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
+        color: var(--color-white);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Category Tags */
+      .gallery-tags {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .gallery-tag {
+        padding: 0.35rem 0.75rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--color-navy);
+        backdrop-filter: blur(4px);
+      }
+
+      /* Loading Animation */
+      .gallery-loading {
+        position: relative;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--color-navy-light);
+        border-top-color: var(--color-navy);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>08080602004</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>cappadorproperty@yahoo.com</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-content">
+            <a href="index.html" class="logo">
+              <img src="images/capador_logo2-removebg-preview.png" alt="Cappador Property Services Ltd." style="height: 60px; width: auto;">
+            </a>
+            
+            <div class="menu-toggle">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            
+            <div class="nav-menu">
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="available-stores.html">Available Stores</a></li>
+                <li><a href="lease-process.html">Lease Process</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary">Schedule a Viewing</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">About Us</h1>
+        <p>Revolutionizing Real Estate and Security Solutions in Abuja</p>
+      </div>
+    </div>
+
+    <main>
+      <!-- About Introduction -->
+      <div class="container">
+        <div class="about-intro">
+          <h2 class="section-title">Our Story</h2>
+          <p>
+            At Cappador Property Services Ltd., we redefine excellence in real estate and security management. With a robust portfolio of prime properties and a state-of-the-art security division, we are your go-to partner for comprehensive property and security solutions.
+          </p>
+          <p>
+            From leasing premium properties to safeguarding assets, we operate with a commitment to quality, innovation, and client satisfaction. Our integrated approach ensures that whether you're seeking property solutions or security services, you receive nothing but the best.
+          </p>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="about-mission">
+        <div class="container">
+          <h2 class="section-title text-center mb-10">Our Services</h2>
+          
+          <div class="mission-grid">
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <h3>Real Estate Services</h3>
+              <p>
+                Property leasing, plaza development, comprehensive property management, and expert sales & acquisition services.
+              </p>
+            </div>
+            
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-shield-alt"></i>
+              </div>
+              <h3>Security Services</h3>
+              <p>
+                24/7 security personnel, advanced surveillance systems, and customized access control solutions for complete peace of mind.
+              </p>
+            </div>
+            
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <h3>Premium Solutions</h3>
+              <p>
+                Integrated property and security solutions tailored to meet diverse client needs with uncompromising quality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Property Gallery -->
+      <div class="property-gallery">
+        <div class="container">
+          <h2 class="section-title text-center mb-4">Our Premium Properties</h2>
+          <p class="text-center text-gray max-w-3xl mx-auto mb-8">
+            Explore our strategically located properties in Abuja's most sought-after areas
+          </p>
+
+          <!-- Filter Buttons -->
+          <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="*">All Properties</button>
+            <button class="filter-btn" data-filter=".retail">Retail Spaces</button>
+            <button class="filter-btn" data-filter=".office">Office Spaces</button>
+            <button class="filter-btn" data-filter=".mixed-use">Mixed Use</button>
+            <button class="filter-btn" data-filter=".facilities">Facilities</button>
+          </div>
+
+          <!-- Loading State -->
+          <div class="gallery-loading">
+            <div class="loading-spinner"></div>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div class="gallery-grid">
+            <!-- Cappador Mall -->
+            <a href="../images/cappador-mall-1.jpg" class="gallery-item retail" data-fancybox="gallery" 
+               data-caption="Cappador Mall - Premier shopping destination with diverse retail spaces">
+              <div class="gallery-image-wrapper">
+                <img src="../images/cappador-mall-1.jpg" alt="Cappador Mall Exterior" class="gallery-image" 
+                     loading="lazy" width="800" height="600">
+                <div class="gallery-tags">
+                  <span class="gallery-tag">Retail</span>
+                  <span class="gallery-tag">Shopping Mall</span>
+                </div>
+                <div class="gallery-overlay">
+                  <h3 class="gallery-title">Cappador Mall</h3>
+                  <p class="gallery-description">Premier shopping destination with diverse retail spaces</p>
+                </div>
+                <div class="gallery-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </a>
+
+            <!-- Cappador Centre -->
+            <a href="../images/cappador-centre.jpg" class="gallery-item office mixed-use" data-fancybox="gallery"
+               data-caption="Cappador Centre - Modern commercial complex with premium office spaces">
+              <div class="gallery-image-wrapper">
+                <img src="../images/cappador-centre.jpg" alt="Cappador Centre" class="gallery-image"
+                     loading="lazy" width="800" height="600">
+                <div class="gallery-tags">
+                  <span class="gallery-tag">Office</span>
+                  <span class="gallery-tag">Mixed Use</span>
+                </div>
+                <div class="gallery-overlay">
+                  <h3 class="gallery-title">Cappador Centre</h3>
+                  <p class="gallery-description">Modern commercial complex with premium office spaces</p>
+                </div>
+                <div class="gallery-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </a>
+
+            <!-- Cappador Galaxy -->
+            <a href="../images/cappador-galaxy.jpg" class="gallery-item mixed-use" data-fancybox="gallery"
+               data-caption="Cappador Galaxy - Mixed-use development featuring retail and office spaces">
+              <div class="gallery-image-wrapper">
+                <img src="../images/cappador-galaxy.jpg" alt="Cappador Galaxy" class="gallery-image"
+                     loading="lazy" width="800" height="600">
+                <div class="gallery-tags">
+                  <span class="gallery-tag">Mixed Use</span>
+                </div>
+                <div class="gallery-overlay">
+                  <h3 class="gallery-title">Cappador Galaxy</h3>
+                  <p class="gallery-description">Mixed-use development featuring retail and office spaces</p>
+                </div>
+                <div class="gallery-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </a>
+
+            <!-- Additional Gallery Items -->
+            <a href="../images/cappador-mall-2.jpg" class="gallery-item retail" data-fancybox="gallery"
+               data-caption="Modern Retail Spaces - Well-designed interiors for optimal business operations">
+              <div class="gallery-image-wrapper">
+                <img src="../images/cappador-mall-2.jpg" alt="Cappador Mall Interior" class="gallery-image"
+                     loading="lazy" width="800" height="600">
+                <div class="gallery-tags">
+                  <span class="gallery-tag">Retail</span>
+                </div>
+                <div class="gallery-overlay">
+                  <h3 class="gallery-title">Modern Retail Spaces</h3>
+                  <p class="gallery-description">Well-designed interiors for optimal business operations</p>
+                </div>
+                <div class="gallery-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </a>
+
+            <a href="../images/cappador-centre-2.jpg" class="gallery-item office" data-fancybox="gallery"
+               data-caption="Premium Facilities - State-of-the-art amenities and security systems">
+              <div class="gallery-image-wrapper">
+                <img src="../images/cappador-centre-2.jpg" alt="Cappador Centre Facilities" class="gallery-image"
+                     loading="lazy" width="800" height="600">
+                <div class="gallery-tags">
+                  <span class="gallery-tag">Office</span>
+                </div>
+                <div class="gallery-overlay">
+                  <h3 class="gallery-title">Premium Facilities</h3>
+                  <p class="gallery-description">State-of-the-art amenities and security systems</p>
+                </div>
+                <div class="gallery-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </a>
+
+            <a href="../images/cappador-mall-4.jpg" class="gallery-item retail" data-fancybox="gallery"
+               data-caption="Strategic Location - Prime locations with excellent accessibility">
+              <div class="gallery-image-wrapper">
+                <img src="../images/cappador-mall-4.jpg" alt="Cappador Property Overview" class="gallery-image"
+                     loading="lazy" width="800" height="600">
+                <div class="gallery-tags">
+                  <span class="gallery-tag">Retail</span>
+                </div>
+                <div class="gallery-overlay">
+                  <h3 class="gallery-title">Strategic Location</h3>
+                  <p class="gallery-description">Prime locations with excellent accessibility</p>
+                </div>
+                <div class="gallery-icon">
+                  <i class="fa-solid fa-expand"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locations Section -->
+      <div class="milestone-section">
+        <div class="container">
+          <h2 class="section-title text-center mb-10">Our Locations</h2>
+          
+          <div class="milestone-container">
+            <div class="milestone-content">
+              <div class="milestone-dot"></div>
+              <h3 class="milestone-title">Cappador Mall (Head Office)</h3>
+              <p class="milestone-description">
+                No. 8 Aguyi Ironsi Street, Maitama, Abuja
+              </p>
+            </div>
+            
+            <div class="milestone-content">
+              <div class="milestone-dot"></div>
+              <h3 class="milestone-title">Cappador Place</h3>
+              <p class="milestone-description">
+                Ademola Adetokunbo Crescent, Wuse 2, Abuja
+              </p>
+            </div>
+            
+            <div class="milestone-content">
+              <div class="milestone-dot"></div>
+              <h3 class="milestone-title">Cappador Centre</h3>
+              <p class="milestone-description">
+                No. 5 Alexandria Crescent, Wuse 2, Abuja
+              </p>
+            </div>
+            
+            <div class="milestone-content">
+              <div class="milestone-dot"></div>
+              <h3 class="milestone-title">Cappador Galaxy</h3>
+              <p class="milestone-description">
+                Aminu Kano Crescent, Wuse 2, Abuja
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Choose Us Section -->
+      <div class="team-section">
+        <div class="container">
+          <h2 class="section-title text-center mb-10">Why Choose Cappador?</h2>
+          
+          <div class="team-grid">
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-medal"></i>
+              </div>
+              <h3>Unparalleled Expertise</h3>
+              <p>
+                Years of industry experience providing deep understanding of property and security landscapes in Abuja.
+              </p>
+            </div>
+            
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <h3>Premium Locations</h3>
+              <p>
+                Strategic presence in Abuja's most sought-after locations, ensuring excellent returns for investors.
+              </p>
+            </div>
+            
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-puzzle-piece"></i>
+              </div>
+              <h3>Integrated Solutions</h3>
+              <p>
+                One-stop solution for property and security needs, tailored to meet diverse client requirements.
+              </p>
+            </div>
+            
+            <div class="mission-item">
+              <div class="mission-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <h3>Innovation & Excellence</h3>
+              <p>
+                Leveraging cutting-edge technologies and industry best practices for exceptional results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partners Section -->
+      <div class="partner-section">
+        <div class="container">
+          <h2 class="section-title text-center mb-4">Our Trusted Partners</h2>
+          <p class="text-center text-gray max-w-3xl mx-auto mb-10">
+            We're proud to work with some of Nigeria's most respected mall developers, property managers, and retail brands.
+          </p>
+          
+          <div class="partner-logos">
+            <div class="partner-logo">
+              <!-- Replace with actual partner logos -->
+              <img src="https://via.placeholder.com/150x80?text=Partner+Logo" alt="Partner Company">
+            </div>
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/150x80?text=Partner+Logo" alt="Partner Company">
+            </div>
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/150x80?text=Partner+Logo" alt="Partner Company">
+            </div>
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/150x80?text=Partner+Logo" alt="Partner Company">
+            </div>
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/150x80?text=Partner+Logo" alt="Partner Company">
+            </div>
+            <div class="partner-logo">
+              <img src="https://via.placeholder.com/150x80?text=Partner+Logo" alt="Partner Company">
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Company Info -->
+          <div class="footer-company">
+            <div class="footer-logo">
+              <img src="images/capador_logo2-removebg-preview.png" alt="Cappador Property Services Ltd." style="height: 50px; width: auto; margin-bottom: 1rem;">
+            </div>
+            <p>
+              Revolutionizing real estate and security solutions in Abuja through innovation, excellence, and integrated services.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="available-stores.html">Available Stores</a></li>
+              <li><a href="lease-process.html">Lease Process</a></li>
+              <li><a href="testimonials.html">Client Testimonials</a></li>
+              <li><a href="blog.html">Blog & News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <h3>Contact Info</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>
+                  No. 8 Aguyi Ironsi Street, <br>
+                  Maitama, Abuja
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>08080602004</p>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <p>cappadorproperty@yahoo.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h3>Subscribe to Updates</h3>
+            <p>
+              Stay informed about new store listings and real estate insights.
+            </p>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="Your Email Address" required>
+              <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Cappador Property Services Ltd. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Success Toast Notification -->
+    <div class="toast" id="toast">
+      <div class="toast-content">
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="toast-message">
+          <span class="toast-title">Success!</span>
+          <span class="toast-description">Thank you for subscribing to our newsletter.</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-xmark toast-close"></i>
+    </div>
+
+    <script src="js/main.js"></script>
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <!-- Add these scripts before closing body tag -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Hide loading state and show grid
+        const loadingEl = document.querySelector('.gallery-loading');
+        const gridEl = document.querySelector('.gallery-grid');
+        
+        // Initialize Isotope after images are loaded
+        const iso = new Isotope(gridEl, {
+          itemSelector: '.gallery-item',
+          layoutMode: 'masonry',
+          masonry: {
+            columnWidth: '.gallery-item',
+            gutter: 24
+          },
+          transitionDuration: '0.4s',
+          stagger: 30
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Update active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter items
+            iso.arrange({ filter: filterValue === '*' ? null : filterValue });
+          });
+        });
+
+        // Wait for images to load
+        imagesLoaded(gridEl, function() {
+          loadingEl.style.display = 'none';
+          gridEl.style.opacity = '1';
+          iso.layout();
+        });
+      });
+
+      // Enhanced Fancybox Configuration
+      Fancybox.bind("[data-fancybox]", {
+        Toolbar: {
+          display: {
+            left: ["infobar"],
+            middle: [
+              "zoomIn",
+              "zoomOut",
+              "toggle1to1",
+              "rotateCCW",
+              "rotateCW",
+              "flipX",
+              "flipY",
+            ],
+            right: ["slideshow", "thumbs", "close"],
+          },
+        },
+        Images: {
+          zoom: true,
+        },
+        Carousel: {
+          transition: "slide",
+          friction: 0.8
+        },
+        Thumbs: {
+          type: "classic"
+        },
+        Hash: true,
+        Toolbar: {
+          display: ["counter", "zoom", "slideshow", "fullscreen", "download", "thumbs", "close"],
+        },
+        Slideshow: {
+          timeout: 3000,
+          autostart: false
+        },
+        protect: true
+      });
+    </script>
+  </body>
+</html>

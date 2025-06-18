@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Testimonials - Abuja Mall Rentals Hub</title>
+    <meta name="description" content="Read what our clients have to say about their experience renting retail spaces through Abuja Mall Rentals Hub" />
+    <meta name="author" content="Abuja Mall Rentals Hub" />
+
+    <meta property="og:title" content="Client Testimonials - Abuja Mall Rentals Hub" />
+    <meta property="og:description" content="Discover success stories from businesses that have found their perfect retail space through our services" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+      /* Testimonials Page Specific Styles */
+      .page-header {
+        background-image: linear-gradient(rgba(15, 30, 76, 0.85), rgba(15, 30, 76, 0.85)), 
+                          url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 6rem 0;
+        color: var(--color-white);
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+      
+      .page-title {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      
+      .testimonial-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+      
+      .testimonial-intro p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        color: var(--color-gray);
+        line-height: 1.8;
+      }
+      
+      .testimonial-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      
+      @media (min-width: 768px) {
+        .testimonial-stats {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      
+      .stat-item {
+        background-color: var(--color-offwhite);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-navy);
+        margin-bottom: 0.5rem;
+        font-family: var(--font-playfair);
+      }
+      
+      .stat-label {
+        color: var(--color-gray);
+        font-size: 0.95rem;
+      }
+      
+      .testimonial-featured {
+        background-color: var(--color-navy);
+        color: var(--color-white);
+        padding: 4rem 0;
+        margin-bottom: 5rem;
+      }
+      
+      .featured-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+      
+      @media (min-width: 992px) {
+        .featured-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 5rem;
+        }
+      }
+      
+      .featured-content h2 {
+        color: var(--color-white);
+        margin-bottom: 1.5rem;
+      }
+      
+      .featured-quote {
+        font-size: 1.25rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        font-style: italic;
+        position: relative;
+      }
+      
+      .featured-quote::before {
+        content: '\f10d';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        color: var(--color-gold);
+        font-size: 2.5rem;
+        position: absolute;
+        left: -1rem;
+        top: -1.5rem;
+        opacity: 0.5;
+      }
+      
+      .featured-client {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .featured-client-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      
+      .featured-client-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .featured-client-info h4 {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+      
+      .featured-client-info p {
+        color: var(--color-gold);
+        font-size: 0.9rem;
+      }
+      
+      .featured-video {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        box-shadow: var(--shadow-lg);
+      }
+      
+      .featured-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+      
+      @media (min-width: 768px) {
+        .testimonial-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .testimonial-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      
+      .testimonial-card {
+        background-color: var(--color-white);
+        border-radius: 0.5rem;
+        padding: 2rem;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+      }
+      
+      .testimonial-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-5px);
+      }
+      
+      .testimonial-rating {
+        display: flex;
+        gap: 0.25rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .testimonial-rating i {
+        color: var(--color-gold);
+      }
+      
+      .testimonial-text {
+        font-style: italic;
+        color: var(--color-gray);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      .testimonial-client {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--color-gray-light);
+      }
+      
+      .testimonial-client-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      
+      .testimonial-client-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .testimonial-client-info h4 {
+        color: var(--color-navy);
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+      
+      .testimonial-client-info p {
+        color: var(--color-gray);
+        font-size: 0.9rem;
+      }
+      
+      .testimonial-business {
+        background-color: var(--color-navy-light);
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+        color: var(--color-navy);
+      }
+      
+      .testimonial-video-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 4rem 0;
+      }
+      
+      @media (min-width: 768px) {
+        .testimonial-video-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      .testimonial-video-card {
+        background-color: var(--color-white);
+        border-radius: 0.5rem;
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .testimonial-video-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-5px);
+      }
+      
+      .testimonial-video-player {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+      }
+      
+      .testimonial-video-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      .testimonial-video-content {
+        padding: 1.5rem;
+      }
+      
+      .testimonial-video-content h3 {
+        color: var(--color-navy);
+        margin-bottom: 0.5rem;
+        font-family: var(--font-playfair);
+      }
+      
+      .testimonial-video-content p {
+        color: var(--color-gray);
+        margin-bottom: 1rem;
+        line-height: 1.6;
+      }
+      
+      .filter-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+      
+      .filter-button {
+        padding: 0.75rem 1.5rem;
+        background-color: var(--color-offwhite);
+        color: var(--color-navy);
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      
+      .filter-button:hover {
+        background-color: var(--color-navy-light);
+      }
+      
+      .filter-button.active {
+        background-color: var(--color-navy);
+        color: var(--color-white);
+      }
+      
+      .cta-section {
+        background-color: var(--color-offwhite);
+        padding: 4rem 0;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      
+      .cta-heading {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--color-navy);
+        font-family: var(--font-playfair);
+      }
+      
+      .cta-text {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        color: var(--color-gray);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="container">
+          <div class="top-bar-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>08080602004</span>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>cappadorproperty@yahoo.com</span>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-content">
+            <a href="index.html" class="logo">
+              <div class="logo-icon">
+                <span>AM</span>
+              </div>
+              <div class="logo-text">
+                <span class="logo-title">Abuja Mall</span>
+                <span class="logo-subtitle">RENTALS HUB</span>
+              </div>
+            </a>
+            
+            <div class="menu-toggle">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            
+            <div class="nav-menu">
+              <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="available-stores.html">Available Stores</a></li>
+                <li><a href="lease-process.html">Lease Process</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+              <a href="contact.html" class="btn btn-primary">Schedule a Viewing</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Client Testimonials</h1>
+        <p>Read what our clients have to say about their experience with us</p>
+      </div>
+    </div>
+
+    <main>
+      <!-- Testimonial Introduction -->
+      <div class="container">
+        <div class="testimonial-intro">
+          <h2 class="section-title">Success Stories</h2>
+          <p>
+            At Abuja Mall Rentals Hub, our greatest achievement is the success of our clients. We take pride in helping businesses of all sizes find their perfect retail space and thrive in Abuja's competitive market.
+          </p>
+          <p>
+            Below are testimonials from some of our satisfied clients who have experienced our commitment to excellence and personalized service.
+          </p>
+        </div>
+        
+        <!-- Statistics -->
+        <div class="testimonial-stats">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Successful Leases</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Mall Partnerships</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-number">85%</div>
+            <div class="stat-label">Renewal Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Testimonial Section -->
+      <div class="testimonial-featured">
+        <div class="container">
+          <div class="featured-grid">
+            <div class="featured-content">
+              <h2 class="section-title">Featured Client Story</h2>
+              <p class="featured-quote">
+                Abuja Mall Rentals Hub took the time to truly understand our brand and vision. They didn't just find us a space; they found us the perfect space that has contributed significantly to our growth. Their expertise and personalized approach made all the difference.
+              </p>
+              <div class="featured-client">
+                <div class="featured-client-image">
+                  <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sarah Okonkwo">
+                </div>
+                <div class="featured-client-info">
+                  <h4>Sarah Okonkwo</h4>
+                  <p>CEO, Lavish Boutique - Ceddi Plaza</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="featured-video">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Client Testimonial Video" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Filter Section -->
+      <div class="container">
+        <h2 class="section-title text-center mb-10">Client Experiences</h2>
+        
+        <div class="filter-container">
+          <button class="filter-button active" data-filter="all">All Industries</button>
+          <button class="filter-button" data-filter="fashion">Fashion & Apparel</button>
+          <button class="filter-button" data-filter="food">Food & Beverage</button>
+          <button class="filter-button" data-filter="tech">Electronics & Tech</button>
+          <button class="filter-button" data-filter="beauty">Beauty & Wellness</button>
+        </div>
+        
+        <!-- Testimonial Cards -->
+        <div class="testimonial-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card" data-category="fashion">
+            <span class="testimonial-business">Fashion & Apparel</span>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Finding the right location was crucial for our luxury fashion brand. Abuja Mall Rentals Hub understood our requirements perfectly and secured us a prime spot in Jabi Lake Mall with excellent foot traffic and the right neighboring stores."
+            </p>
+            <div class="testimonial-client">
+              <div class="testimonial-client-image">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Michael Adebayo">
+              </div>
+              <div class="testimonial-client-info">
+                <h4>Michael Adebayo</h4>
+                <p>Owner, Elite Fashion House</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card" data-category="food">
+            <span class="testimonial-business">Food & Beverage</span>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "As a restaurant owner, I needed a space with specific technical requirements. The team at Abuja Mall Rentals Hub went above and beyond to find us a perfect location in the food court with all the necessary infrastructure for our kitchen equipment."
+            </p>
+            <div class="testimonial-client">
+              <div class="testimonial-client-image">
+                <img src="https://images.unsplash.com/photo-1581368087098-a0b5c3f6b13a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Amina Ibrahim">
+              </div>
+              <div class="testimonial-client-info">
+                <h4>Amina Ibrahim</h4>
+                <p>Founder, Spice Fusion Restaurant</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card" data-category="tech">
+            <span class="testimonial-business">Electronics & Tech</span>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="testimonial-text">
+              "The negotiation process for our electronics showroom lease was handled professionally by Abuja Mall Rentals Hub. They secured favorable terms including a fit-out allowance that helped us create a state-of-the-art display area."
+            </p>
+            <div class="testimonial-client">
+              <div class="testimonial-client-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="David Osei">
+              </div>
+              <div class="testimonial-client-info">
+                <h4>David Osei</h4>
+                <p>Manager, TechWorld Nigeria</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 4 -->
+          <div class="testimonial-card" data-category="beauty">
+            <span class="testimonial-business">Beauty & Wellness</span>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "Opening our first salon in a major mall was intimidating, but Abuja Mall Rentals Hub made it seamless. Their team guided us through every step of the process, from initial viewing to final setup. Our business has thrived in this location!"
+            </p>
+            <div class="testimonial-client">
+              <div class="testimonial-client-image">
+                <img src="https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Chioma Nwosu">
+              </div>
+              <div class="testimonial-client-info">
+                <h4>Chioma Nwosu</h4>
+                <p>Proprietor, Glow Beauty Spa</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 5 -->
+          <div class="testimonial-card" data-category="fashion">
+            <span class="testimonial-business">Fashion & Apparel</span>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "When expanding our clothing brand to Abuja, we needed multiple locations simultaneously. Abuja Mall Rentals Hub coordinated viewings across different malls efficiently and helped us secure three prime retail spaces that fit our brand image perfectly."
+            </p>
+            <div class="testimonial-client">
+              <div class="testimonial-client-image">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Victor Mensah">
+              </div>
+              <div class="testimonial-client-info">
+                <h4>Victor Mensah</h4>
+                <p>Director, Urban Style Collective</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 6 -->
+          <div class="testimonial-card" data-category="food">
+            <span class="testimonial-business">Food & Beverage</span>
+            <div class="testimonial-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              "As an international coffee chain entering the Nigerian market, we needed local expertise. The team's knowledge of Abuja's retail landscape and consumer behavior helped us choose locations that have exceeded our sales projections."
+            </p>
+            <div class="testimonial-client">
+              <div class="testimonial-client-image">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fatima Bello">
+              </div>
+              <div class="testimonial-client-info">
+                <h4>Fatima Bello</h4>
+                <p>Country Manager, Bean & Brew Café</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Testimonials -->
+      <div class="container">
+        <h2 class="section-title text-center mb-10">Video Testimonials</h2>
+        
+        <div class="testimonial-video-grid">
+          <!-- Video Testimonial 1 -->
+          <div class="testimonial-video-card">
+            <div class="testimonial-video-player">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Testimonial" allowfullscreen></iframe>
+            </div>
+            <div class="testimonial-video-content">
+              <h3>Success Story: Luxury Fashion Boutique</h3>
+              <p>
+                Hear how our team helped Elite Fashion House secure their flagship store in Jabi Lake Mall, leading to a 200% increase in sales within the first year.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Video Testimonial 2 -->
+          <div class="testimonial-video-card">
+            <div class="testimonial-video-player">
+              <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Testimonial" allowfullscreen></iframe>
+            </div>
+            <div class="testimonial-video-content">
+              <h3>From Startup to Success: TechWorld Nigeria</h3>
+              <p>
+                Learn how our strategic location advice and lease negotiation helped this electronics retailer grow from a small kiosk to a major showroom.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta-section">
+        <div class="container">
+          <h2 class="cta-heading">Ready to Write Your Own Success Story?</h2>
+          <p class="cta-text">
+            Join hundreds of satisfied businesses that have found their perfect retail space with Abuja Mall Rentals Hub. Contact us today to start your journey to retail success.
+          </p>
+          <a href="contact.html" class="btn btn-primary">Get Started Today</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Company Info -->
+          <div class="footer-company">
+            <div class="footer-logo">
+              <div class="logo-icon">
+                <span>AM</span>
+              </div>
+              <div class="logo-text">
+                <span class="logo-title">Abuja Mall</span>
+                <span class="logo-subtitle">RENTALS HUB</span>
+              </div>
+            </div>
+            <p>
+              Premier retail space rentals across shopping malls in Abuja, Nigeria. We connect businesses with prime retail locations.
+            </p>
+            <div class="footer-social">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="available-stores.html">Available Stores</a></li>
+              <li><a href="lease-process.html">Lease Process</a></li>
+              <li><a href="testimonials.html">Client Testimonials</a></li>
+              <li><a href="blog.html">Blog & News</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="footer-contact">
+            <h3>Contact Info</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>
+                  No. 8 Aguyi Ironsi Street, <br>
+                  Maitama, Abuja
+                </p>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>08080602004</p>
+              </div>
+              <div class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                <p>cappadorproperty@yahoo.com</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h3>Subscribe to Updates</h3>
+            <p>
+              Stay informed about new store listings and real estate insights.
+            </p>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="Your Email Address" required>
+              <button type="submit" class="btn btn-secondary">Subscribe Now</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Abuja Mall Rentals Hub. All rights reserved.
+          </p>
+          <div class="footer-legal">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Success Toast Notification -->
+    <div class="toast" id="toast">
+      <div class="toast-content">
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="toast-message">
+          <span class="toast-title">Success!</span>
+          <span class="toast-description">Thank you for subscribing to our newsletter.</span>
+        </div>
+      </div>
+      <i class="fa-solid fa-xmark toast-close"></i>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Testimonial filtering
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        
+        filterButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Show/hide testimonials based on filter
+            testimonialCards.forEach(card => {
+              if (filterValue === 'all') {
+                card.style.display = 'block';
+              } else if (card.getAttribute('data-category') === filterValue) {
+                card.style.display = 'block';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

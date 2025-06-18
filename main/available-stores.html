@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Stores - Cappador Property Services Ltd.</title>
+    <meta name="description" content="Browse available retail and office spaces across Cappador's premium locations in Abuja" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      :root {
+        --color-primary: #1a237e;
+        --color-secondary: #ff6b6b;
+        --color-text: #333;
+        --color-light: #f8f9fa;
+        --color-gray: #6c757d;
+        --font-primary: 'Poppins', sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-primary);
+        line-height: 1.6;
+        color: var(--color-text);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Modern Navigation */
+      .navbar {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+      }
+
+      .logo img {
+        height: 40px;
+        width: auto;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--color-text);
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--color-primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        margin-top: 80px;
+        height: 500px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-slide.active {
+        opacity: 1;
+      }
+
+      .hero-content {
+        text-align: center;
+        color: white;
+        padding: 2rem;
+        background: rgba(26, 35, 126, 0.85);
+        border-radius: 12px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .hero-buttons .btn {
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .slide-indicators {
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .indicator {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .indicator.active {
+        background: white;
+      }
+
+      /* Filters */
+      .filters {
+        background: white;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .filter-select {
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--color-primary);
+        border-radius: 8px;
+        background: white;
+        color: var(--color-primary);
+        font-family: var(--font-primary);
+        cursor: pointer;
+        min-width: 200px;
+      }
+
+      /* Property Grid */
+      .properties-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+
+      .property-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .property-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .property-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .property-content {
+        padding: 1.5rem;
+      }
+
+      .property-title {
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .property-location {
+        color: var(--color-gray);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .property-features {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--color-gray);
+      }
+
+      .property-price {
+        font-size: 1.25rem;
+        color: var(--color-primary);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .property-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        text-align: center;
+        flex: 1;
+      }
+
+      .btn-primary {
+        background: var(--color-primary);
+        color: white;
+      }
+
+      .btn-outline {
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        
+        .filter-container {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        
+        .filter-select {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="index.html" class="logo">
+          <img src="images/capador_logo2-removebg-preview.png" alt="Cappador Property Services Ltd." style="height: 60px; width: auto;">
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="available-stores.html" class="active">Available Stores</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Transitions -->
+    <section class="hero">
+      <div class="hero-slide active" style="background-image: url('images/capador mall.jpg');">
+        <div class="hero-content">
+          <h1>Premium Retail Space in Maitama</h1>
+          <p>Experience luxury retail at Cappador Mall - Where Business Meets Elegance</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Explore Spaces</a>
+            <a href="#" class="btn btn-outline" style="background: white;">Schedule Viewing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image: url('images/capador centre.jpg');">
+        <div class="hero-content">
+          <h1>Strategic Location in Wuse 2</h1>
+          <p>Join the thriving business community at Cappador Centre - Your Success Starts Here</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Explore Spaces</a>
+            <a href="#" class="btn btn-outline" style="background: white;">Schedule Viewing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image: url('images/capador galaxy side.jpg');">
+        <div class="hero-content">
+          <h1>Modern Office Solutions</h1>
+          <p>Discover state-of-the-art facilities at Cappador Galaxy - Where Innovation Meets Opportunity</p>
+          <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">Explore Spaces</a>
+            <a href="#" class="btn btn-outline" style="background: white;">Schedule Viewing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div class="container">
+        <div class="filter-container">
+          <select class="filter-select" id="location-filter">
+            <option value="">All Locations</option>
+            <option value="maitama">Maitama</option>
+            <option value="wuse2">Wuse 2</option>
+          </select>
+          <select class="filter-select" id="type-filter">
+            <option value="">All Types</option>
+            <option value="retail">Retail Space</option>
+            <option value="office">Office Space</option>
+          </select>
+          <select class="filter-select" id="size-filter">
+            <option value="">Any Size</option>
+            <option value="small">Small (< 50 sqm)</option>
+            <option value="medium">Medium (50-100 sqm)</option>
+            <option value="large">Large (> 100 sqm)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="properties">
+      <div class="container">
+        <div class="properties-grid">
+          <!-- Property Card 1 -->
+          <div class="property-card">
+            <img src="images/capador mall.jpg" alt="Retail Space" class="property-image">
+            <div class="property-content">
+              <h3 class="property-title">Premium Retail Space</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cappador Mall, Maitama</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-expand"></i>
+                  <span>75 sqm</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-store"></i>
+                  <span>Retail</span>
+                </div>
+              </div>
+              <div class="property-price">₦150,000/sqm/year</div>
+              <div class="property-buttons">
+                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="#" class="btn btn-outline">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 2 -->
+          <div class="property-card">
+            <img src="images/capador centre.jpg" alt="Office Space" class="property-image">
+            <div class="property-content">
+              <h3 class="property-title">Modern Office Suite</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cappador Centre, Wuse 2</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-expand"></i>
+                  <span>120 sqm</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-building"></i>
+                  <span>Office</span>
+                </div>
+              </div>
+              <div class="property-price">₦180,000/sqm/year</div>
+              <div class="property-buttons">
+                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="#" class="btn btn-outline">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 3 -->
+          <div class="property-card">
+            <img src="images/capador galaxy side.jpg" alt="Retail Space" class="property-image">
+            <div class="property-content">
+              <h3 class="property-title">Corner Retail Space</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Cappador Galaxy, Wuse 2</span>
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-expand"></i>
+                  <span>90 sqm</span>
+                </div>
+                <div class="feature">
+                  <i class="fas fa-store"></i>
+                  <span>Retail</span>
+                </div>
+              </div>
+              <div class="property-price">₦160,000/sqm/year</div>
+              <div class="property-buttons">
+                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="#" class="btn btn-outline">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>08080602004</span>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>cappadorproperty@yahoo.com</span>
+      </div>
+    </div>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>
+          No. 8 Aguyi Ironsi Street, <br>
+          Maitama, Abuja
+        </p>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <p>08080602004</p>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <p>cappadorproperty@yahoo.com</p>
+      </div>
+    </div>
+
+    <script>
+      // Image Transition Logic
+      const slides = document.querySelectorAll('.hero-slide');
+      const indicators = document.querySelectorAll('.indicator');
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      // Auto transition every 5 seconds
+      setInterval(nextSlide, 5000);
+
+      // Click handlers for indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      // Simple filter functionality
+      document.querySelectorAll('.filter-select').forEach(select => {
+        select.addEventListener('change', filterProperties);
+      });
+
+      function filterProperties() {
+        const location = document.getElementById('location-filter').value;
+        const type = document.getElementById('type-filter').value;
+        const size = document.getElementById('size-filter').value;
+
+        document.querySelectorAll('.property-card').forEach(card => {
+          // Add your filter logic here if needed
+          // For now, we'll keep all cards visible
+          card.style.display = 'block';
+        });
+      }
+    </script>
+  </body>
+</html> 
